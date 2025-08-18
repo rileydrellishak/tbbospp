@@ -37,7 +37,7 @@ def get_user_input():
 
 def format_user_input(user_input):
     guessed_number = []
-
+    
     for digit in user_input:
         guessed_number.append(int(digit))
     
@@ -45,16 +45,41 @@ def format_user_input(user_input):
 
 def set_secret_number():
     secret_number = []
+    
     while len(secret_number) < MAX_DIGIT_LENGTH:
         secret_number.append(random.randint(0,9))
+    
     return secret_number
 
+def compare_guess_to_secret_number(guessed_number, secret_number):
+    hints = []
+    
+    for i in range(0, (MAX_DIGIT_LENGTH)):
+        if guessed_number[i] == secret_number[i]:
+            hints.append("Fermi")
+        
+        elif guessed_number[i] in secret_number:
+            hints.append("Pico")
+
+    if hints.count("Fermi") == MAX_DIGIT_LENGTH:
+        hints.clear()
+        hints.append("You guessed the secret number!")
+    
+    elif len(hints) == 0:
+        hints.append("Bagels")
+    
+    return hints
+
+
 def bagels_game():
+    mystery_number = set_secret_number()
+    # Debugging info
+    print(mystery_number)
+
     user_guess = get_user_input()
     user_guess_list = format_user_input(user_guess)
-    mystery_number = set_secret_number()
-    print(user_guess)
-    print(user_guess_list)
-    print(mystery_number)
+
+    hints = compare_guess_to_secret_number(user_guess_list, mystery_number)
+    print(hints)
 
 bagels_game()
