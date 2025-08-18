@@ -39,7 +39,7 @@ def format_user_input(user_input):
     guessed_number = []
     
     for digit in user_input:
-        guessed_number.append(int(digit))
+        guessed_number.append(str(digit))
     
     return guessed_number
 
@@ -47,9 +47,9 @@ def set_secret_number():
     secret_number = []
     
     while len(secret_number) < MAX_DIGIT_LENGTH:
-        secret_number.append(random.randint(0,9))
+        secret_number.append(str(random.randint(0,9)))
     
-    return secret_number
+    return "".join(secret_number)
 
 def compare_guess_to_secret_number(guessed_number, secret_number):
     hints = []
@@ -68,18 +68,20 @@ def compare_guess_to_secret_number(guessed_number, secret_number):
     elif len(hints) == 0:
         hints.append("Bagels")
     
-    return hints
+    return " ".join(hints)
 
 
 def bagels_game():
-    mystery_number = set_secret_number()
+    secret_number = set_secret_number()
     # Debugging info
-    print(mystery_number)
+    print(secret_number)
 
     user_guess = get_user_input()
     user_guess_list = format_user_input(user_guess)
+    print(type(user_guess))
 
-    hints = compare_guess_to_secret_number(user_guess_list, mystery_number)
+    hints = compare_guess_to_secret_number(user_guess_list, secret_number)
     print(hints)
+    
 
 bagels_game()
