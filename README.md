@@ -3,7 +3,7 @@
 ## Tier 1: Beginner
 ### :bagel: [Bagels](/bagels.py)
 <details>
-  <summary>Reflections</summary>
+  <summary>### :bagel: [Bagels](/bagels.py)</summary>
   
   * 08/17
     * Created a function set_secret_number() to create the random n-digit mystery number.
