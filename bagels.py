@@ -22,9 +22,8 @@ MAX_DIGIT_LENGTH = 3
 MAX_GUESSES = 10
 
 def get_user_input():
-    guessed_number = []
     valid_input = False
-    
+
     while not valid_input:
         user_input = input(f"Guess a {MAX_DIGIT_LENGTH} digit number: ")
         
@@ -34,9 +33,14 @@ def get_user_input():
         else:
             print(f"Your guess must be a {MAX_DIGIT_LENGTH} digit number.")
         
+    return user_input
+
+def format_user_input(user_input):
+    guessed_number = []
+
     for digit in user_input:
         guessed_number.append(int(digit))
-
+    
     return guessed_number
 
 def set_secret_number():
@@ -46,8 +50,10 @@ def set_secret_number():
     return secret_number
 
 def bagels_game():
-    user_guess_list = get_user_input()
+    user_guess = get_user_input()
+    user_guess_list = format_user_input(user_guess)
     mystery_number = set_secret_number()
+    print(user_guess)
     print(user_guess_list)
     print(mystery_number)
 
