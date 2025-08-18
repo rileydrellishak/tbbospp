@@ -21,12 +21,54 @@
 </details>
 
 ### :birthday: [Birthday Paradox](/birthday_paradox.py)
+<details>
+  <summary>Reflections</summary>
+  * Date
+    * 
+</details>
+
 ### :closed_lock_with_key: [Caesar Cipher](/ccipher.py)
+<details>
+  <summary>Reflections</summary>
+  * Date
+    * 
+</details>
+
 ### :lock: [Caesar Hacker](/chacker.py)
+<details>
+  <summary>Reflections</summary>
+  * Date
+    * 
+</details>
+
 ### :game_die: [Cho Han](/cho_han.py)
+<details>
+  <summary>Reflections</summary>
+  * Date
+    * 
+</details>
+
 ### :newspaper: [Clickbait Headline Generator](/clickbait_headline_generator.py)
+<details>
+  <summary>Reflections</summary>
+  * Date
+    * 
+</details>
+
 ### :1234: [Collatz Sequence](/collatz_sequence.py)
+<details>
+  <summary>Reflections</summary>
+  * Date
+    * 
+</details>
+
 ### :mag_right: [Factor Finder](/factor_finder.py)
+<details>
+  <summary>Reflections</summary>
+  * Date
+    * 
+</details>
+
 
 ## Tier 2: Intermediate
 
