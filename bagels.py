@@ -19,7 +19,7 @@ Bagels
 import random
 
 MAX_DIGIT_LENGTH = 3
-MAX_GUESSES = 10
+MAX_GUESSES = 5
 
 def get_user_input():
     """Validates the user input - checks if it is a sequence of 
@@ -62,55 +62,78 @@ def set_secret_number():
     
     return "".join(secret_number)
 
-def compare_guess_to_secret_number(guessed_number, secret_number):
+def compare_guess_to_secret_number(user_input, secret_number):
     """Compares the values between user guess and the secret_number to
     generate the hint string.
 
     Args:
-        guessed_number (str): The MAX_DIGIT_LENGTH digit number the 
+        user_input (str): The MAX_DIGIT_LENGTH digit number the 
         user guessed.
         secret_number (str): The secret number the user is trying to
         guess.
 
     Returns:
-        " ".join(hints) (str): A string that
+        " ".join(hints) (str): A string that joins the clues 
+        (alphabetical order).
 
     """
     hints = []
     
     for i in range(0, (MAX_DIGIT_LENGTH)):
-        if guessed_number[i] == secret_number[i]:
-            hints.append("Fermi")
-        
-        # elif guessed_number[i] in secret_number AND it isn't already 
-        # example: secret_number is 304, guess is 333 -- output should be Fermi.
-        # example: secret is 123, guess is 222 -- output should just be Fermi
-        # example: secret is 212, guess is 222 -- output should be Fermi Fermi
-        # example: secret is 555, guess is 456 -- output is Fermi
-        # example: secret is 631, guess is 133 -- output is Pico Fermi
-        # example: secret is 123, guess is 444 -- output is Bagels
+        if user_input[i] not in secret_number:
+            hints = hints
+        else:
+            if user_input[i] == secret_number[i]:
+                hints.append("Fermi")
+            else:
+                hints.append("Pico")
 
-    if hints.count("Fermi") == MAX_DIGIT_LENGTH:
-        hints.clear()
-        hints.append("You guessed the secret number!")
-    
-    elif len(hints) == 0:
-        hints.append("Bagels")
-    
+    hints.sort()
     return " ".join(hints)
 
+def still_playing(hints):
+    """Checks the hints to see if the secret number was guessed.
+
+    Args:
+        hints: the string produced from 
+        compare_guess_to_secret_number(user_input, secret_number)
+
+    Returns:
+        Boolean: will switch the True/False flag in the main game loop
+        according to the contents of the hints string.
+    """
+
+    if hints.count("Fermi") == MAX_DIGIT_LENGTH:
+        hints = "You guessed the secret number!"
+        print(hints)
+        return False
+    
+    elif len(hints) == 0:
+        hints = "Bagels"
+        print(hints)
+        return True
+
+    else:
+        hints = hints
+        print(hints)
+        return True
 
 def bagels_game():
     secret_number = set_secret_number()
     # Debugging info
     print(secret_number)
+    num_guesses = 0
+    waiting_for_correct = True
 
-    user_guess = get_user_input()
+    while (num_guesses < MAX_GUESSES) and waiting_for_correct:
+        num_guesses += 1
+        user_guess = get_user_input()
 
-    print(type(user_guess))
+        hints = compare_guess_to_secret_number(user_guess, secret_number)
 
-    hints = compare_guess_to_secret_number(user_guess, secret_number)
-    print(hints)
+        waiting_for_correct = still_playing(hints)
     
+    if waiting_for_correct:
+        print(f"The secret number was {secret_number}.")
 
 bagels_game()
