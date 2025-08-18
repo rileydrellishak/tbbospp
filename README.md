@@ -5,9 +5,13 @@
 <details>
   <summary>Reflections</summary>
   
-  * 08/17 - Created a function set_secret_number() to create the random n-digit mystery number. Created a function get_user_input to validate the type of input -- should be an n-digit number. Formats it as a list of individual numbers of n length upon validation.
+  * 08/17
+    * Created a function set_secret_number() to create the random n-digit mystery number.
+    * Created a function get_user_input to validate the type of input -- should be an n-digit number. Formats it as a list of individual numbers of n length upon validation.
 
-  * 08/18 - Realized I could more closely align to the single responsibility principle with the get_user_input function. I should make another function just to format the input. Made the function format_user_input(user_input).
+  * 08/18
+    * Realized I could more closely align to the single responsibility principle with the get_user_input function. I should make another function just to format the input. Made the function format_user_input(user_input).
+    * Made a very simple version of comparing the user guess with the mystery number - it checks each item by index and constructs a list of strings. I will later convert this to a straight up string.
 </details>
 
 ### :birthday: [Birthday Paradox](/birthday_paradox.py)
