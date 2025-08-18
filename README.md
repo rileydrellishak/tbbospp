@@ -3,10 +3,10 @@
 ## Tier 1: Beginner
 ### :bagel: [Bagels](/bagels.py)
 08/17
-### :birthday: [Birthday Paradox]
-### :closed_lock_with_key: [Caesar Cipher]
-### :lock: [Caesar Hacker]
-### :game_die: [Cho Han]
-### :newspaper: [Clickbait Headline Generator]
-### :1234: [Collatz Sequence]
-### :mag_right: [Factor Finder]
+### :birthday: [Birthday Paradox](/birthday_paradox.py)
+### :closed_lock_with_key: [Caesar Cipher](/ccipher.py)
+### :lock: [Caesar Hacker](/chacker.py)
+### :game_die: [Cho Han](/cho_han.py)
+### :newspaper: [Clickbait Headline Generator](/clickbait_headline_generator.py)
+### :1234: [Collatz Sequence](/collatz_sequence.py)
+### :mag_right: [Factor Finder](/factor_finder.py)
