@@ -2,7 +2,7 @@
 [Project Descriptions](https://inventwithpython.com/bigbookpython/)
 ## Tier 1: Beginner
 ### :bagel: [Bagels](/bagels.py)
-08/17 - Created a function set_secret_number() to create the random n-digit mystery number.
+08/17 - Created a function set_secret_number() to create the random n-digit mystery number. Created a function get_user_input to validate the type of input -- should be an n-digit number. Formats it as a list of individual numbers of n length upon validation.
 ### :birthday: [Birthday Paradox](/birthday_paradox.py)
 ### :closed_lock_with_key: [Caesar Cipher](/ccipher.py)
 ### :lock: [Caesar Hacker](/chacker.py)
