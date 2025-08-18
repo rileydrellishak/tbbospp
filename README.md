@@ -13,6 +13,11 @@
     * Realized I could more closely align to the single responsibility principle with the get_user_input function. I should make another function just to format the input. Made the function format_user_input(user_input).
     * Made a very simple version of comparing the user guess with the mystery number - it checks each item by index and constructs a list of strings. I will later convert this to a straight up string.
     * Created a helper function to determine whether the number was guessed based on contents of the hint string.
+    * Created a helper function at the end to give user option to replay.
+    * I asked chat to review, gave following suggestions:
+      * Change set_secret_number() so duplicate digits are not allowed
+      * Randomizes the hint list every time
+      * Refactors compare_guess_to_secret_number() to just produce final clue string, which in turn updates how to change still_playing helper function
 </details>
 
 ### :birthday: [Birthday Paradox](/birthday_paradox.py)

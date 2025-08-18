@@ -45,9 +45,8 @@ def get_user_input():
     return user_input
 
 def set_secret_number():
-    """Sets the secret number the user is trying to guess. First as a
-    list then converted to a string of numbers to allow for the
-    first digit to be 0.
+    """Sets the secret number the user is trying to guess. Unique digits,
+    allows a leading 0.
 
     Args:
         None
@@ -55,12 +54,8 @@ def set_secret_number():
     Returns:
         string: The secret number the user is trying to guess.
     """
-    secret_number = []
     
-    while len(secret_number) < MAX_DIGIT_LENGTH:
-        secret_number.append(str(random.randint(0,9)))
-    
-    return "".join(secret_number)
+    return "".join(random.sample("0123456789", MAX_DIGIT_LENGTH))
 
 def compare_guess_to_secret_number(user_input, secret_number):
     """Compares the values between user guess and the secret_number to
@@ -80,15 +75,15 @@ def compare_guess_to_secret_number(user_input, secret_number):
     hints = []
     
     for i in range(0, (MAX_DIGIT_LENGTH)):
-        if user_input[i] not in secret_number:
-            hints = hints
-        else:
-            if user_input[i] == secret_number[i]:
-                hints.append("Fermi")
-            else:
-                hints.append("Pico")
+        if user_input[i] == secret_number[i]:
+            hints.append("Fermi")
+        elif user_input[i] in secret_number:
+            hints.append("Pico")
+    
+    if not hints:
+        return "Bagels"
 
-    hints.sort()
+    random.shuffle(hints)
     return " ".join(hints)
 
 def still_playing(hints):
@@ -108,13 +103,7 @@ def still_playing(hints):
         print(hints)
         return False
     
-    elif len(hints) == 0:
-        hints = "Bagels"
-        print(hints)
-        return True
-
     else:
-        hints = hints
         print(hints)
         return True
 
@@ -135,5 +124,17 @@ def bagels_game():
     
     if waiting_for_correct:
         print(f"The secret number was {secret_number}.")
+    
+def play_bagels():
+    playing = True
+    while playing:
+        bagels_game()
+
+        replay = input("Play again? (y/n): ").lower()
+
+        if replay == "n":
+            playing = False
+    
+    print("Thanks for playing!")
 
 bagels_game()
