@@ -10,3 +10,7 @@
 ### :newspaper: [Clickbait Headline Generator](/clickbait_headline_generator.py)
 ### :1234: [Collatz Sequence](/collatz_sequence.py)
 ### :mag_right: [Factor Finder](/factor_finder.py)
+
+## Tier 2: Intermediate
+
+## Tier 3: Advanced

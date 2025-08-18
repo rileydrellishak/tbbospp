@@ -16,3 +16,20 @@ Fermi pico
 If secret number is 024 and user guesses 111,
 Bagels
 """
+import random
+
+MAX_DIGIT_LENGTH = 3
+MAX_GUESSES = 10
+
+def set_secret_number():
+    secret_number = []
+    while len(secret_number) < MAX_DIGIT_LENGTH:
+        secret_number.append(random.randint(0,9))
+    return secret_number
+
+def bagels_game():
+
+    mystery_number = set_secret_number()
+    print(mystery_number)
+
+bagels_game()
