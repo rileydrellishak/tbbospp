@@ -64,8 +64,8 @@
 ### :1234: [Collatz Sequence](/collatz_sequence.py)
 <details>
   <summary>Reflections</summary>
-  [Enhanced project description](https://chatgpt.com/share/68a4a661-23a4-800b-9c43-f2590ee2215f)
-  
+  ([enhanced project description for collatz sequence](https://chatgpt.com/share/68a4a661-23a4-800b-9c43-f2590ee2215f)) 
+
   * 08/19
     * Created two helper functions - one to get user input for starting number, another to validate that user input is a positive number.
 </details>
