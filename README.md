@@ -35,8 +35,9 @@
 ### :closed_lock_with_key: [Caesar Cipher](/ccipher.py)
 <details>
   <summary>Reflections</summary>
-  * Date
-    * 
+  [Enhanced project description]()
+  * 08/19
+    * Added docstring description of problem from chat
 </details>
 
 ### :lock: [Caesar Hacker](/chacker.py)
@@ -63,6 +64,7 @@
 ### :1234: [Collatz Sequence](/collatz_sequence.py)
 <details>
   <summary>Reflections</summary>
+  [Enhanced project description](https://chatgpt.com/share/68a4a661-23a4-800b-9c43-f2590ee2215f) 
   * Date
     * 
 </details>
