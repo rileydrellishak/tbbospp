@@ -39,26 +39,39 @@ def next_collatz_value(n):
     else:
         return int((n * 3) + 1)
     
-def collatz_sequence():
+def print_steps(sequence):
+    for term in sequence:
+        if sequence[0] == term:
+            print(f"Start: {term}")
+        else:
+            print(f"{sequence.index(term)}. {term}")
+
+def compute_stats(sequence):
+    stats = {"start": sequence[0], 
+            "steps": sequence.index(1), 
+            "max": max(sequence)}
+    return stats
+
+def print_summary(stats):
+    print(f"Starting from {stats["start"]}, it took {stats["steps"]} "
+        f"steps to reach 1. Maximum value reached was {stats["max"]}.")
+
+def run_collatz():
     starting_number = get_starting_number()
-    modified_number = starting_number
-    list_of_terms = []
-    steps = 0
-    while modified_number > 1:
+    term = starting_number
+    list_of_terms = [starting_number]
 
-        steps += 1
-        modified_number = next_collatz_value(modified_number)
+    while term > 1:
 
-        list_of_terms.append(modified_number)
-        print(f"{steps}. {modified_number}")
-    
-    max_value = max(list_of_terms)
-    
-    print(f"Starting number: {starting_number}")
-    print(f"Number of steps: {steps}")
-    print(f"Maximum value reached: {max_value}")
+        term = next_collatz_value(term)
+
+        list_of_terms.append(term)
+
+    print_steps(list_of_terms)
+
+    print_summary(compute_stats(list_of_terms))
 
     return list_of_terms
 
 
-collatz_sequence()
+run_collatz()
