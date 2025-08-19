@@ -64,11 +64,13 @@
 ### :1234: [Collatz Sequence](/collatz_sequence.py)
 <details>
   <summary>Reflections</summary>
+
     * 08/19
       * Created two helper functions - one to get user input for starting number, another to validate that user input is a positive number.
       * I have the very basic version of the sequence creator done. I want to focus next on making helper functions to better align with the single responsibility principle. 
       * I made a ton of helper functions to make the run_collatz() function look like a recipe. This will help once I start getting some matplotlib into this to show the dotplot of steps (x) vs terms (y)
       * Helpful conversation with [chat](https://chatgpt.com/share/68a4a661-23a4-800b-9c43-f2590ee2215f) for guidance
+
 </details>
 
 ### :mag_right: [Factor Finder](/factor_finder.py)
