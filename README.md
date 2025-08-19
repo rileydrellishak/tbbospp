@@ -18,6 +18,11 @@
       * Change set_secret_number() so duplicate digits are not allowed
       * Randomizes the hint list every time
       * Refactors compare_guess_to_secret_number() to just produce final clue string, which in turn updates how to change still_playing helper function
+  
+  * 08/19
+    * Wrote a helper function ask_replay to allow user to replay game.
+    * Incorporated a way to check number of guesses left in a game
+    * Put some new lines in displayed lines to enhance readability
 </details>
 
 ### :birthday: [Birthday Paradox](/birthday_paradox.py)

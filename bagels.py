@@ -35,7 +35,7 @@ def get_user_input():
 
     while not valid_input:
         user_input = input(f"Guess a {MAX_DIGIT_LENGTH} digit number: ")
-        
+        print()
         if user_input.isdigit() and (len(user_input) == MAX_DIGIT_LENGTH):
             valid_input = True
 
@@ -107,6 +107,10 @@ def still_playing(hints):
         print(hints)
         return True
 
+def num_guesses_left(MAX_GUESSES, num_guesses):
+    return (f"Guesses left: {MAX_GUESSES - num_guesses}")
+
+
 def bagels_game():
     secret_number = set_secret_number()
     # Debugging info
@@ -119,22 +123,48 @@ def bagels_game():
         user_guess = get_user_input()
 
         hints = compare_guess_to_secret_number(user_guess, secret_number)
-
         waiting_for_correct = still_playing(hints)
+
+        if waiting_for_correct:
+            print(num_guesses_left(MAX_GUESSES, num_guesses))
+            print()
     
     if waiting_for_correct:
         print(f"The secret number was {secret_number}.")
     
+    elif not waiting_for_correct:
+        print(f"You had {MAX_GUESSES - num_guesses} guesses left.")
+
+def ask_replay():
+    """Keeps asking until user types y or n. Return true for replay,
+    False to exit the game.
+    """
+    while True:
+        print()
+        replay = input("Play again? (y/n): ").lower()
+        if replay == "y":
+            return True
+        elif replay == "n":
+            return False
+        else:
+            print("I only know y or n!")
+
 def play_bagels():
     playing = True
+    game_count = 0
     while playing:
         bagels_game()
-
-        replay = input("Play again? (y/n): ").lower()
-
-        if replay == "n":
-            playing = False
+        game_count += 1
+        
+        playing = ask_replay()
+        if playing:
+            print()
+            print("--- New Game ---")
+            print()
     
-    print("Thanks for playing!")
+    if game_count == 1:
+        print(f"You played {game_count} game. Thanks for playing!")
+    else:
+        print(f"You played {game_count} games. Thanks for playing!")
 
-bagels_game()
+play_bagels()
