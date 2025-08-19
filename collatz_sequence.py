@@ -37,15 +37,25 @@ def collatz_sequence():
     starting_number = get_starting_number()
     modified_number = starting_number
     list_of_terms = []
+    steps = 0
     while modified_number > 1:
+
+        steps += 1
         if modified_number % 2 == 0:
             modified_number = int(modified_number / 2)
         elif modified_number % 2 != 0:
             modified_number = int((modified_number * 3) + 1)
 
         list_of_terms.append(modified_number)
-        print(modified_number)
+        print(f"{steps}. {modified_number}")
     
+    max_value = max(list_of_terms)
     
+    print(f"Starting number: {starting_number}")
+    print(f"Number of steps: {steps}")
+    print(f"Maximum value reached: {max_value}")
+
+    return list_of_terms
+
 
 collatz_sequence()

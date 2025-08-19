@@ -68,6 +68,7 @@
 
   * 08/19
     * Created two helper functions - one to get user input for starting number, another to validate that user input is a positive number.
+    * I have the very basic version of the sequence creator done. I want to focus next on making helper functions to better align with the single responsibility principle. 
 </details>
 
 ### :mag_right: [Factor Finder](/factor_finder.py)
