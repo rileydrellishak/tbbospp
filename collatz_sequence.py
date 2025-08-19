@@ -25,10 +25,27 @@ def get_starting_number():
 
 def validate_starting_number(starting_number):
     if (starting_number.isnumeric() 
-            and int(starting_number) > 0
+            and int(starting_number) > 1
         ):
             return True
 
     else:
-        print("Enter a positive number.")
+        print("Enter a positive number greater than 1.")
         return False
+
+def collatz_sequence():
+    starting_number = get_starting_number()
+    modified_number = starting_number
+    list_of_terms = []
+    while modified_number > 1:
+        if modified_number % 2 == 0:
+            modified_number = int(modified_number / 2)
+        elif modified_number % 2 != 0:
+            modified_number = int((modified_number * 3) + 1)
+
+        list_of_terms.append(modified_number)
+        print(modified_number)
+    
+    
+
+collatz_sequence()
