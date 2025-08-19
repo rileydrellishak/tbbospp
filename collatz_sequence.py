@@ -33,6 +33,12 @@ def validate_starting_number(starting_number):
         print("Enter a positive number greater than 1.")
         return False
 
+def next_collatz_value(n):
+    if n % 2 == 0:
+        return int(n / 2)
+    else:
+        return int((n * 3) + 1)
+    
 def collatz_sequence():
     starting_number = get_starting_number()
     modified_number = starting_number
@@ -41,10 +47,7 @@ def collatz_sequence():
     while modified_number > 1:
 
         steps += 1
-        if modified_number % 2 == 0:
-            modified_number = int(modified_number / 2)
-        elif modified_number % 2 != 0:
-            modified_number = int((modified_number * 3) + 1)
+        modified_number = next_collatz_value(modified_number)
 
         list_of_terms.append(modified_number)
         print(f"{steps}. {modified_number}")
