@@ -13,6 +13,9 @@ Optional Enhancements:
 * Count steps to reach 1
 * Track the highest number in the sequence
 """
+import matplotlib.pyplot as plt
+import numpy as np
+
 
 def get_starting_number():
     """Prompts user for an input (a number) to start off the sequence.
@@ -128,15 +131,28 @@ def run_collatz():
     """
     starting_number = get_starting_number()
     term = starting_number
-    list_of_terms = [starting_number]
+    collatz_sequence = [starting_number]
 
     while term > 1:
         term = next_collatz_value(term)
-        list_of_terms.append(term)
+        collatz_sequence.append(term)
 
-    print_steps(list_of_terms)
-    print_summary(compute_stats(list_of_terms))
+    print_steps(collatz_sequence)
+    print_summary(compute_stats(collatz_sequence))
 
-    return list_of_terms
+    return collatz_sequence
 
-run_collatz()
+collatz_sequence = run_collatz()
+
+def axes(sequence):
+    x_axis = []
+    y_axis = sequence
+    for i in range(len(sequence)):
+        x_axis.append(i)
+    return x_axis, y_axis
+
+x_values, y_values = axes(collatz_sequence)
+
+plt.plot(x_values, y_values, 'ro')
+plt.axis((0, len(collatz_sequence), 0, max(collatz_sequence)))
+plt.show()

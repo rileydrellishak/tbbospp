@@ -73,7 +73,10 @@
   
   * 08/20
     * Made a virtual environment to install matplotlib for this project
-    * Starting to make a line plot to show step number (x) vs value of term (y)
+    * Starting to make a dot plot to show step number (x) vs value of term (y)
+    * Helper function made to set x and y axis -- list of indicies, list of terms
+    * Makes a very simple dot plot! How cool is that?!?!
+      * The axes depend on the length and max value of the sequence
 
 </details>
 
