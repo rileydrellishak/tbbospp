@@ -70,6 +70,10 @@
     * I have the very basic version of the sequence creator done. I want to focus next on making helper functions to better align with the single responsibility principle. 
     * I made a ton of helper functions to make the run_collatz() function look like a recipe. This will help once I start getting some matplotlib into this to show the dotplot of steps (x) vs terms (y)
     * Helpful conversation with [chat](https://chatgpt.com/share/68a4a661-23a4-800b-9c43-f2590ee2215f) for guidance
+  
+  * 08/20
+    * Made a virtual environment to install matplotlib for this project
+    * Starting to make a line plot to show step number (x) vs value of term (y)
 
 </details>
 
