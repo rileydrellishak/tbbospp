@@ -50,8 +50,19 @@
 ### :game_die: [Cho Han](/cho_han.py)
 <details>
   <summary>Reflections</summary>
-  * Date
-    * 
+
+  - 08/21
+    - Inserted docstring to explain the game
+    - Made helper functions to:
+      - receive user bet
+      - validate user bet
+      - receive user prediction
+      - validate user prediction
+      - roll die
+      - check sum of die
+      - match die rolls with Japanese word
+    - [Chat](https://chatgpt.com/share/68a744c0-4f54-800b-b794-c80749d6cb4b)
+
 </details>
 
 ### :newspaper: [Clickbait Headline Generator](/clickbait_headline_generator.py)
