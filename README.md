@@ -107,5 +107,9 @@
   
   - 08/22
     - Added docstring to explain purpose
-    - 
+    - helper functions
+      - get user input
+      - validate user input
+      - determine start of word (vowel, consonant cluster, or cluster)
+      - functions to translate based on start of word
 </details>
