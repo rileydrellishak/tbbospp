@@ -139,7 +139,7 @@
     - Display riddles, accept answers, check with keyword matches.
 </details>
 
-    ### :crescent_moon: Intermediate
+### :crescent_moon: Intermediate
 <details>
    <summary>Bitmap Message</summary>
     Store ASCII bitmap. Replace each character with cycling letters from user message.
@@ -290,7 +290,7 @@
     Solve pouring puzzle with BFS: buckets of sizes A, B, target volume T. Print steps.
 </details>
 
-    ### :ringed_planet: Advanced
+### :ringed_planet: Advanced
 <details>
    <summary>Bouncing DVD Logo</summary>
     Move “DVD” text around terminal. Bounce off edges. Redraw each frame.
