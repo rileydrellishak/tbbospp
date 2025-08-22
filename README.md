@@ -67,6 +67,7 @@
       - check outcome against prediction
       - adjust purse based on outcome vs logic (T/F)
       - replay loop
+      - game dialogue throughout
 
 </details>
 
