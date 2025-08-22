@@ -42,13 +42,6 @@
     * Added docstring description of problem from chat
 </details>
 
-### :lock: [Caesar Hacker](/chacker.py)
-<details>
-  <summary>Reflections</summary>
-  * Date
-    * 
-</details>
-
 ### :game_die: [Cho Han](/cho_han.py)
 <details>
   <summary>Reflections</summary>
@@ -72,13 +65,6 @@
       - game dialogue throughout
     - [Further polishing guidelines](https://chatgpt.com/s/t_68a89432a85081919bc5af2ea4114ba2)
 
-</details>
-
-### :newspaper: [Clickbait Headline Generator](/clickbait_headline_generator.py)
-<details>
-  <summary>Reflections</summary>
-  * Date
-    * 
 </details>
 
 ### :1234: [Collatz Sequence](/collatz_sequence.py)
@@ -113,8 +99,3 @@
       - format the list into a string
   
 </details>
-
-
-## Tier 2: Intermediate
-
-## Tier 3: Advanced
