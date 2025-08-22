@@ -68,6 +68,7 @@
       - adjust purse based on outcome vs logic (T/F)
       - replay loop
       - game dialogue throughout
+    - [Further polishing guidelines](https://chatgpt.com/s/t_68a89432a85081919bc5af2ea4114ba2)
 
 </details>
 
