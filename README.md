@@ -101,8 +101,9 @@
 ### :mag_right: [Factor Finder](/factor_finder.py)
 <details>
   <summary>Reflections</summary>
-  * Date
-    * 
+  
+  - 08/22
+    - Started file, added docstring to explain purpose.
 </details>
 
 
