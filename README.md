@@ -1,4 +1,5 @@
 # RD's Remixes of "The Big Book of Small Python Projects" by Al Sweigart
+[Project Tiers and Descriptions](\PROJECT_DESCRIPTIONS.md)
 [Project Descriptions](https://inventwithpython.com/bigbookpython/)
 [Tiers](https://chatgpt.com/s/t_68a8b84d16448191afc4eb0c6e2bf043)
 [Pathways](https://chatgpt.com/s/t_68a8b86cbc748191bee9bd4fd720445e)
@@ -30,14 +31,14 @@
 ### :birthday: [Birthday Paradox](/birthday_paradox.py)
 <details>
   <summary>Reflections</summary>
-  * Date
-    * 
+
+  - 08/22
+    - Started the file with the docstring
 </details>
 
 ### :closed_lock_with_key: [Caesar Cipher](/ccipher.py)
 <details>
   <summary>Reflections</summary>
-  [Enhanced project description]()
   * 08/19
     * Added docstring description of problem from chat
 </details>
