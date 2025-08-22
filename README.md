@@ -1,5 +1,7 @@
 # RD's Remixes of "The Big Book of Small Python Projects" by Al Sweigart
 [Project Descriptions](https://inventwithpython.com/bigbookpython/)
+[Tiers](https://chatgpt.com/s/t_68a8b84d16448191afc4eb0c6e2bf043)
+[Pathways](https://chatgpt.com/s/t_68a8b86cbc748191bee9bd4fd720445e)
 ## Tier 1: Beginner
 ### :bagel: [Bagels](/bagels.py)
 <details>
