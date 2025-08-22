@@ -62,6 +62,11 @@
       - check sum of die
       - match die rolls with Japanese word
     - [Chat](https://chatgpt.com/share/68a744c0-4f54-800b-b794-c80749d6cb4b)
+  - 08/22
+    - Helper functions created:
+      - check outcome against prediction
+      - adjust purse based on outcome vs logic (T/F)
+      - replay loop
 
 </details>
 

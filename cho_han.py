@@ -21,16 +21,14 @@ JAPANESE_NUMBERS = {
     6: 'ROKU'
     }
 
-purse = 5000
-
-def get_user_bet():
+def get_user_bet(purse):
     valid_input = False
     while not valid_input:
         bet = input(f"You have {purse} mon. How much do you bet? ")
-        valid_input = validate_bet(bet)
+        valid_input = validate_bet(bet, purse)
     return int(bet)
 
-def validate_bet(bet):
+def validate_bet(bet, purse):
     if (
         (not bet.isnumeric())
         or (int(bet) > purse) 
@@ -44,8 +42,8 @@ def validate_bet(bet):
 
 def validate_prediction(prediction):
     if (
-        (prediction.lower() == "cho")
-        or (prediction.lower() == "han")
+        (prediction.upper() == "CHO")
+        or (prediction.upper() == "HAN")
     ):
         return True
     else:
@@ -56,7 +54,7 @@ def validate_prediction(prediction):
 def get_user_prediction():
     prediction_received = False
     while not prediction_received:
-        prediction = input("CHO (even) or HAN (odd)? ")
+        prediction = input("CHO (even) or HAN (odd)? ").upper()
         prediction_received = validate_prediction(prediction)
     return prediction
 
@@ -73,22 +71,54 @@ def sum_roll(die_1, die_2):
 
 def even_or_odd(sum_of_roll):
     if sum_of_roll % 2 == 0:
-        return "cho"
+        return "CHO"
     else:
-        return "han"
-    
-    
+        return "HAN"
+
+def player_win(prediction, outcome):
+    return prediction == outcome
+
+def purse_result(player_win, bet, purse):
+    if player_win:
+        purse += (2 * bet)
+        purse -= (purse // 10)
+        print(purse)
+    else:
+        purse -= bet
+        print(purse)
+    return purse
+
+def ask_replay():
+    is_input_valid = False
+    while not is_input_valid:
+        replay = input("Keep playing? (y/n): ").lower()
+        if replay == "n":
+            is_input_valid = True
+            return False
+        elif replay == "y":
+            is_input_valid = True
+            return True
+        else:
+            print("Enter y or n.")
+
 def gameplay():
-    bet = get_user_bet()
-    prediction = get_user_prediction()
-    die_1, die_2 = dice_roll()
-    jn_1, jn_2 = announce_roll(die_1, die_2)
-    sum_of_roll = sum_roll(die_1, die_2)
-    cho_or_han = even_or_odd(sum_of_roll)
-    print(f"{jn_1} - {jn_2}")
-    print(f"{die_1} - {die_2}")
-    print(f"{sum_of_roll}")
-    print(cho_or_han)
-    print(prediction == cho_or_han)
+    purse = 5000
+    playing = True
+    while purse > 0 and playing:
+        bet = get_user_bet(purse)
+        prediction = get_user_prediction()
+        die_1, die_2 = dice_roll()
+        jn_1, jn_2 = announce_roll(die_1, die_2)
+        sum_of_roll = sum_roll(die_1, die_2)
+        cho_or_han = even_or_odd(sum_of_roll)
+        win = player_win(prediction, cho_or_han)
+        print(f"{jn_1} - {jn_2}")
+        print(f"{die_1} - {die_2}")
+        print(f"{sum_of_roll}")
+        print(cho_or_han)
+        print(player_win(prediction, cho_or_han))
+        purse = purse_result(win, bet, purse)
+        print(purse)
+        playing = ask_replay()
 
 gameplay()
