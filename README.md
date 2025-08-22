@@ -104,6 +104,12 @@
   
   - 08/22
     - Started file, added docstring to explain purpose.
+    - helper functions for the following:
+      - get user input
+      - validate input
+      - find factors, put into a list
+      - format the list into a string
+  
 </details>
 
 
