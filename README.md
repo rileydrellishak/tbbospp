@@ -100,3 +100,12 @@
       - format the list into a string
   
 </details>
+
+### :pig: [Pig Latin](/pig_latin.py)
+<details>
+  <summary>Reflections</summary>
+  
+  - 08/22
+    - Added docstring to explain purpose
+    - 
+</details>
