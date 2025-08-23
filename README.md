@@ -112,4 +112,7 @@
       - validate user input
       - determine start of word (vowel, consonant cluster, or cluster)
       - functions to translate based on start of word
+    - 08/23
+      - Created an overall function to translate entire sentences by using the previous function I made to translate single words
+      - Accounting for punctuation is a work in progress
 </details>

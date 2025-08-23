@@ -13,21 +13,24 @@ CONSONANT_CLUSTERS = [
     "sl", "sm", "sn", "sp", "st", "sw", "th", "tr",
     "tw", "wh", "wr"
 ]
-def get_user_word():
+
+def get_user_input():
     valid_input = False
     while not valid_input:
         pre_translation = input("What word would you like " \
         "to translate? ").lower()
         valid_input = validate_input(pre_translation)
-
-    return pre_translation
+    # print(pre_translation.split())
+    return pre_translation.split()
 
 def validate_input(user_input):
-    if not user_input.isalpha():
-        print("Please enter only letters!")
-        return False
-    else:
-        return True
+    words_in_list = user_input.split()
+    for word in words_in_list:
+        if not word.isalpha():
+            print("Please enter only letters!")
+            return False
+        else:
+            return True
 
 def start_of_word(word):
     first_letter = word[0].lower()
@@ -41,37 +44,47 @@ def start_of_word(word):
             return first_letter
 
 def vowel_start_mod(word):
-    return (word + "way").capitalize()
+    return (word + "way")
 
-def consonant_not_cluster(word):
+def consonant_start_mod(word, beginning_letter):
     translated_word = ""
     letter_list = []
-    for i in range(1, len(word)):
-        letter_list.append(word[i])
-    letter_list.append(word[0] + "ay")
+    if beginning_letter == 1:
+        for i in range(1, len(word)):
+            letter_list.append(word[i])
+        letter_list.append(word[0] + "ay")
+
+    elif beginning_letter == 2:
+        for i in range(2, len(word)):
+            letter_list.append(word[i])
+        letter_list.append(word[0] + word[1] + "ay")
+    
     return translated_word.join(letter_list)
 
-def cluster_start_mod(word):
-    translated_word = ""
-    letter_list = []
-    for i in range(2, len(word)):
-        letter_list.append(word[i])
-    letter_list.append(word[0] + word[1] + "ay")
-    return translated_word.join(letter_list)
+def pig_latin_translator(word):
 
-def pig_latin_translator():
-    word = get_user_word()
     beginning_letter = start_of_word(word)
     translation = ""
     if beginning_letter in VOWELS:
         translation = vowel_start_mod(word)
     else:
-        if len(beginning_letter) == 1:
-            # move consonant to the end and add ay
-            translation = consonant_not_cluster(word)
-        else:
-            # this is a cluster. move the cluster then add ay to end
-            translation = cluster_start_mod(word)
-    print(translation)
+        translation = consonant_start_mod(word, len(beginning_letter))
 
-pig_latin_translator()
+    return translation
+
+def pig_latin_sentence():
+    sentence = get_user_input()
+    translated_sentence = ""
+    for word in sentence:
+        if word == sentence[0]:
+            translated_sentence += pig_latin_translator(word).capitalize() + " "
+
+        elif word == sentence[-1]:
+            translated_sentence += pig_latin_translator(word)
+
+        else:
+            translated_sentence += pig_latin_translator(word) + " "
+    print(translated_sentence)
+    return translated_sentence
+
+pig_latin_sentence()
